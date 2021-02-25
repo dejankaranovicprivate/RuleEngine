@@ -5,8 +5,8 @@ namespace RuleEngine.Model
 {
     public class LiveEvent
     {
-        public string TurbineId { get; set; }
-        public List<string> EventIds { get; set; }
+        public int TurbineId { get; set; }
+        public List<int> EventIds { get; set; }
         public DateTime Timestamp { get; set; }
     }
 }

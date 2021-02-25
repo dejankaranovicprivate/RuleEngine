@@ -9,6 +9,7 @@ namespace RuleEngine.Configure
         public static IServiceCollection AddCoreServices(this IServiceCollection services)
         {
             services.AddSingleton<IInstancesGeneratorService, InstancesGeneratorService>();
+            services.AddSingleton<ITurbineAggregationService, TurbineAggregationService>();
 
             return services;
         }

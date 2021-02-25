@@ -2,6 +2,7 @@
 using RuleEngine.Configure;
 using RuleEngine.Enums;
 using RuleEngine.Interfaces;
+using System;
 using System.Threading;
 
 namespace RuleEngine
@@ -16,18 +17,21 @@ namespace RuleEngine
             services.AddCoreServices();
 
             var provider = services.BuildServiceProvider();
-
             var instanceGeneratorService = provider.GetService<IInstancesGeneratorService>();
 
             instanceGeneratorService.CreateInstances();
-            instanceGeneratorService.AddRule(TurbineAggregation.All); // For this simulation purpose I'm using All rule (can be Any and Single as well)
+            foreach(var turbineAggregation in Enum.GetValues(typeof(TurbineAggregation)))
+            {
+                instanceGeneratorService.AddRule((TurbineAggregation)turbineAggregation);
+            }
 
             do
             {
                 instanceGeneratorService.GenerateLiveEvents();
                 var liveEvents = instanceGeneratorService.GetLiveEvents();
                 Thread.Sleep(600 * 1000);
-            } while (true);
+            } 
+            while (true);
         }
     }
 }

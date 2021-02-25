@@ -5,10 +5,10 @@ namespace RuleEngine.Model
 {
     public class Rule
     {
-        public List<string> TurbineIds { get; set; }
+        public List<int> TurbineIds { get; set; }
         public TurbineAggregation TurbineAggregation { get; set; }
-        public List<string> ForbiddenEvents { get; set; }
-        public List<string> RequiredEvents { get; set; }
+        public List<int> ForbiddenEvents { get; set; }
+        public List<int> RequiredEvents { get; set; }
         public string Diagnosis { get; set; }
     }
 }

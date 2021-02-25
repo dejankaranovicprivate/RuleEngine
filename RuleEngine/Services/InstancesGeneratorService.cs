@@ -14,7 +14,7 @@ namespace RuleEngine.Services
         private readonly List<Turbine> turbines = new List<Turbine>();
         private readonly List<Event> events = new List<Event>();
         private readonly List<Rule> rules = new List<Rule>();
-        private readonly List<LiveEvent> liveEvents = new List<LiveEvent>();
+        private List<LiveEvent> liveEvents = new List<LiveEvent>();
 
         public InstancesGeneratorService(ITurbineAggregationService turbineAggregationService)
         {
@@ -69,6 +69,16 @@ namespace RuleEngine.Services
         public List<LiveEvent> GetLiveEvents()
         {
             return liveEvents;
+        }
+
+        public List<Rule> GetRules()
+        {
+            return rules;
+        }
+
+        public void ResetLiveEvents()
+        {
+            liveEvents = new List<LiveEvent>();
         }
     }
 }

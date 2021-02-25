@@ -13,5 +13,9 @@ namespace RuleEngine.Interfaces
         void GenerateLiveEvents();
 
         List<LiveEvent> GetLiveEvents();
+
+        List<Rule> GetRules();
+
+        void ResetLiveEvents();
     }
 }

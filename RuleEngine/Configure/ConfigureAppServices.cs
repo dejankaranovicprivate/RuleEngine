@@ -10,6 +10,7 @@ namespace RuleEngine.Configure
         {
             services.AddSingleton<IInstancesGeneratorService, InstancesGeneratorService>();
             services.AddSingleton<ITurbineAggregationService, TurbineAggregationService>();
+            services.AddSingleton<IWriterService, WriterService>();
 
             return services;
         }
